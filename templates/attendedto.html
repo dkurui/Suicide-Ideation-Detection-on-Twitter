@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<head>
+<title>Business Core | Contact</title>
+<meta charset="utf-8">
+<!-- Google Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+<!-- CSS Files -->
+<link rel="stylesheet" type="text/css" media="screen" href="static/css/style.css"> 
+<link rel="stylesheet" type="text/css" media="screen" href="static/menu/css/simple_menu.css"> 
+
+<link rel="stylesheet" href="static/css/nivo-slider.css" type="text/css" media="screen">
+<!-- Contact Form -->
+<link href="static/contact-form/css/style.css" media="screen" rel="stylesheet" type="text/css">
+<link href="static/contact-form/css/uniform.css" media="screen" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="header">
+  <div id="site_title"><a href="index.html"><img src="static/img/logo1.png" alt=""></a></div>
+  <!-- Main Menu -->
+  <ol id="menu">
+    <li class="active_menu_item"><a href="{{ url_for('index') }}">Home</a>  
+	</li> 
+	<li>
+	<a  href="{{ url_for('index') }}">Attended to tweets</a>	
+    </li> 
+    
+  </ol>
+</div>
+<!-- END header -->
+<div id="container">
+  <h1>Welcome to SuicideWatch</h1>
+  <div class="one-half">
+    <div class="heading_bg">
+      <h2>Suicide Detection System</h2>
+    </div>
+    <p><strong>Guiding and Counselling Centre</strong><br>
+      Strathmore University<br>
+      <br>
+      Tel: (+254) 99 88 77 66<br>
+      mail: mail@help.com </p>
+    <a href="index.html"><img src="static/img/help.png" alt=""></a>
+    <br>
+	</div>
+   
+ <div class="one-half-last">
+ 
+    <div class="heading_bg">
+      <h2>Tweets attended to!</h2>
+    </div>
+	<a style="text-align:right" href="{{ url_for('attendedto') }}"><bold>REFRESH</bold></a>
+	
+	
+	<table>
+	<tr>		
+		<th>Twitter Handle</th>
+		<th>Tweet Name</th>
+		<th>Tweet Text</th>
+		<th>Date Posted</th>
+			
+	</tr>
+	{% for item in data %}	
+	<tr>		
+		<td  style="text-align:left">{{item[0]}}</td>
+		<td  style="text-align:left">{{item[1]}}</td>
+		<td  style="text-align:left">{{item[2]}}</td>
+		<td  style="text-align:left">{{item[3]}}</td>
+		
+		
+	</tr>	
+	{% endfor %}
+	<table>
+   
+  </div>
+  
+  <div style="clear:both; height: 40px"></div>
+</div>
+<!-- close container -->
+<div id="footer">
+  <!-- First Column -->
+  <div class="one-fourth">
+   
+    <ul class="footer_links">
+   Strathmore University
+     
+    </ul>
+  </div>
+  <!-- Second Column -->
+  <div class="one-fourth">
+    Guiding and counselling
+  </div>
+  <!-- Third Column -->
+  <div class="one-fourth">
+    MScIT Project- Kurui Daniel
+  
+  
+  </div>
+   
+  <!-- Fourth Column -->
+  <div class="one-fourth last">
+     </div>
+  <div style="clear:both"></div>
+</div>
+<!-- END footer -->
+</body>
+</html>
